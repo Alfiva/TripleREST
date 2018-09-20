@@ -33,8 +33,7 @@ public class Activator implements BundleActivator {
 	
 	// Initialize APIs
 	String impl = System.getProperty("es.upv.sabien.triplerest.server.servlet.impl",
-		"es.upv.sabien.triplerest.impl.rdf4j.RDF4JTripleRESTImpl");
-//	"es.upv.sabien.triplerest.impl.uaal.CHETripleRESTImpl"
+		"es.upv.sabien.triplerest.impl.uaal.CHETripleRESTImpl");
 	try {
 	    trest = (TripleREST) Class.forName(impl).getConstructor(BundleContext.class)
 		    .newInstance(context);

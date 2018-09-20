@@ -48,7 +48,10 @@
 						<Bundle-Description>${project.description}</Bundle-Description>
 						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
 						<Export-Package>es.upv.sabien.triplerest.server.spark</Export-Package>
-						<Import-Package>org.osgi.framework;version="[1,2)",*</Import-Package>
+						<Import-Package>org.osgi.framework;version="[1,2)",
+						es.upv.sabien.triplerest.impl.rdf4j;resolution:=optional,
+						es.upv.sabien.triplerest.impl.uaal;resolution:=optional,
+						*</Import-Package>
 					</instructions>
 				</configuration>
 			</plugin>
