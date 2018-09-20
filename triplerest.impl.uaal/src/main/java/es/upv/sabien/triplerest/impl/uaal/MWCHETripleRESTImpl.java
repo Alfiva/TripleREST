@@ -32,8 +32,8 @@ import es.upv.sabien.triplerest.api.Utils;
 
 public class MWCHETripleRESTImpl extends CHETripleRESTImpl {
 
-    private static final String SERVICEURI = "http://ontology.universAAL.org/Metaverse.owl#auxService";
-    private static final String SERVICEOUTPUT = "http://ontology.universAAL.org/Metaverse.owl#auxOut";
+    private static final String SERVICEURI = "http://ontology.universAAL.org/TripleREST.owl#auxService";
+    private static final String SERVICEOUTPUT = "http://ontology.universAAL.org/TripleREST.owl#auxOut";
 
     public MWCHETripleRESTImpl(BundleContext context) {
 	super(context);

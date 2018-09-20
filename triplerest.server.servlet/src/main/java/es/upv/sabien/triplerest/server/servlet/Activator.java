@@ -17,7 +17,6 @@ import org.osgi.service.http.HttpService;
 import org.osgi.service.http.NamespaceException;
 
 import es.upv.sabien.triplerest.api.TripleREST;
-//import es.upv.sabien.triplerest.impl.uaal.*;
 
 public class Activator implements BundleActivator {
     private static final String URL = "/store";

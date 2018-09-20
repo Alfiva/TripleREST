@@ -22,7 +22,7 @@ import es.upv.sabien.triplerest.api.TripleRESTException;
 import es.upv.sabien.triplerest.api.Utils;
 
 /**
- * An HTTP Servlet that handles the calls to the metaverse.
+ * An HTTP Servlet that handles the calls to the Triple REST.
  * 
  * @author alfiva
  * 
@@ -30,16 +30,7 @@ import es.upv.sabien.triplerest.api.Utils;
 public class RemoteServlet extends javax.servlet.http.HttpServlet {
 
     private static final long serialVersionUID = -1931914654539856412L;
-//    private static final String DIV_REGEX = "\\:(?![^<]*>)";
-//    private static final Hashtable<String, String> prefixes;
     private static final String WILDCARD = "*";
-//    static{
-//	prefixes=new Hashtable<String, String>();
-//	prefixes.put("rdf", "http://www.w3.org/1999/02/22-rdf-syntax-ns");
-//	prefixes.put("rdfs", "http://www.w3.org/2000/01/rdf-schema");
-//	prefixes.put("owl", "http://www.w3.org/2002/07/owl");
-//	prefixes.put("xsd", "http://www.w3.org/2001/XMLSchema");
-//    }
 
     public RemoteServlet() {
 
@@ -216,29 +207,6 @@ public class RemoteServlet extends javax.servlet.http.HttpServlet {
 	return result;
     }
     
-//    private String processPart(String part, Hashtable<String, String> extras){
-//	if (part != null) {
-//	    if (part.startsWith("/")){//TODO fix this in split
-//		part=part.substring(1);
-//	    }
-//	    String[] splited = part.split(DIV_REGEX, 2);//Split through : not within < >
-//	    if (splited.length > 1) {
-//		String prefix = extras.get(splited[0]);
-//		if(prefix == null){// If not defined, look in defaults
-//		    prefix = prefixes.get(splited[0]);
-//		}
-//		if (prefix != null) {
-//		    if(prefix.endsWith("/")){
-//			return "<" + prefix + splited[1] + ">";
-//		    }else{
-//			return "<" + prefix +"#"+ splited[1] + ">";
-//		    }
-//		}
-//	    }
-//	}
-//	return part;
-//    }
-    
     public static String getInputString(BufferedReader br) throws IOException{
 	StringBuilder builder=new StringBuilder();
 	String line=br.readLine();
@@ -263,8 +231,6 @@ public class RemoteServlet extends javax.servlet.http.HttpServlet {
      */
     public static String[] splitURL(HttpServletRequest rq) throws TripleRESTException {// TODO \/(?![^<]*>)(?![^"]*"\^\^)
 	String[] result = new String[] { null, null, null };
-	//Split through any / that is not between < and > (for uris) and not between " and "^^ (for literals)
-//	String[] parts = url.split("\\/(?![^<]*>)(?![^\"]*\"\\^\\^)");
 	String url=rq.getRequestURI().substring(rq.getServletPath().length());
 	if (url.startsWith("/")) url = url.substring(1); // Remove initial /
 	String[] parts = url.split("/");

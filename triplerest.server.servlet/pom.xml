@@ -23,11 +23,6 @@
 			<artifactId>triplerest.api</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-<!-- 		<dependency> -->
-<!-- 			<groupId>es.upv.sabien</groupId> -->
-<!-- 			<artifactId>triplerest.impl.uaal</artifactId> -->
-<!-- 			<version>0.0.1-SNAPSHOT</version> -->
-<!-- 		</dependency> -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
@@ -48,7 +43,10 @@
 						<Bundle-Description>${project.description}</Bundle-Description>
 						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
 						<Export-Package>es.upv.sabien.triplerest.server.servlet</Export-Package>
-						<Import-Package>org.osgi.framework;version="[1,2)",es.upv.sabien.triplerest.impl.rdf4j,*</Import-Package>
+						<Import-Package>org.osgi.framework;version="[1,2)",
+						es.upv.sabien.triplerest.impl.rdf4j;resolution:=optional,
+						es.upv.sabien.triplerest.impl.uaal;resolution:=optional,
+						*</Import-Package>
 					</instructions>
 				</configuration>
 			</plugin>
