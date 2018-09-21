@@ -17,8 +17,11 @@ import static spark.Spark.*;
 import java.net.URI;
 
 /**
+ * Activator that starts and builds up the RESTlet built with Spark that handles
+ * the calls to the Triple REST.
+ * 
  * @author alfiva
- *
+ * 
  */
 public class Activator implements BundleActivator {
 
@@ -84,10 +87,13 @@ public class Activator implements BundleActivator {
      * Check if the path segment is one of the following, and process it
      * appropriately to be accepted by REST interface:
      * 
-     * null > wildcard > IRI > Literal > prefixed:IRI > prefixed:type:Literal > int > float > long > boolean > Label
+     * null > wildcard > IRI > Literal > prefixed:IRI > prefixed:type:Literal >
+     * int > float > long > boolean > Label
      * 
-     * @param x Path segment
-     * @param rq Request
+     * @param x
+     *            Path segment
+     * @param rq
+     *            Request
      * @return
      */
     private static String process(String x, Request rq){

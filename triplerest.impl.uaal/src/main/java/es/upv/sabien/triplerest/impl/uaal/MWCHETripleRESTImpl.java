@@ -30,6 +30,14 @@ import es.upv.sabien.triplerest.api.Construct;
 import es.upv.sabien.triplerest.api.TripleRESTException;
 import es.upv.sabien.triplerest.api.Utils;
 
+/**
+ * Implementation of Triple REST API using universAAL Middleware. It also uses
+ * CHe to resolve services. If it is not possible to find adequate services in
+ * uAAL, it falls back to using the CHETripleRESTImpl methods.
+ * 
+ * @author alfiva
+ *
+ */
 public class MWCHETripleRESTImpl extends CHETripleRESTImpl {
 
     private static final String SERVICEURI = "http://ontology.universAAL.org/TripleREST.owl#auxService";
@@ -309,6 +317,21 @@ public class MWCHETripleRESTImpl extends CHETripleRESTImpl {
 	return succeeded;
     }
 
+    /**
+     * Find uAAL services that "control" a given type of resource. It uses CHE
+     * to look for those services, which assumes the Service Ontologies that are
+     * used by those service have been loaded into CHe.
+     * 
+     * @param controlledResourceURI
+     *            The URI of the type of resource being "controlled" by the
+     *            service to find.
+     * @return An array of arrays. It represents a list (first coordinate) of
+     *         entries, each containing three values (second coordinate): URI of
+     *         the service found, specific URI of the "controls" property, and
+     *         specific URI of the "controlled" type.
+     * @throws TripleRESTException
+     *             If it cannot parse the services found.
+     */
     private String[][] findServices(String controlledResourceURI) throws TripleRESTException {
 	String query = "SELECT ?s ?p ?x WHERE { "
 		+ "?p a <http://www.w3.org/2002/07/owl#ObjectProperty>."

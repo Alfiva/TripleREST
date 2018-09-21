@@ -28,6 +28,12 @@ import org.eclipse.rdf4j.sail.nativerdf.NativeStore;
 import es.upv.sabien.triplerest.api.AbstractSPARQLTripleREST;
 import es.upv.sabien.triplerest.api.Utils;
 
+/**
+ * Implementation of Triple REST API using RDF4J SPARQL interface.
+ * 
+ * @author alfiva
+ *
+ */
 public class RDF4JSPARQLTripleRESTImpl extends AbstractSPARQLTripleREST {
 
     private static final int SELECT = 0, CONSTRUCT = 1, DESCRIBE = 2, ASK = 3,
@@ -54,6 +60,9 @@ public class RDF4JSPARQLTripleRESTImpl extends AbstractSPARQLTripleREST {
 	}
     }
     
+    /**
+     * Closes the connection to the underlying RDF4J repository.
+     */
     public void close(){
 	try {
 	    con.close();

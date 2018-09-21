@@ -183,6 +183,15 @@ public class RemoteServlet extends javax.servlet.http.HttpServlet {
 	}
     }
     
+    /**
+     * Processes the query part of the request as a Hashtable containing the
+     * query parameters as key-value pairs. It also initializes the reserved s,
+     * p and o parameters to 0 if not present.
+     * 
+     * @param req
+     *            the HTTP request with the query.
+     * @return Hashtable containing the query parameters as key-value pairs.
+     */
     private Hashtable<String, String> processExtras(HttpServletRequest req){
 	Hashtable<String, String> result=new Hashtable<String, String>();
 	String query=req.getQueryString();
@@ -207,6 +216,14 @@ public class RemoteServlet extends javax.servlet.http.HttpServlet {
 	return result;
     }
     
+    /**
+     * Convets the contents of a Buffered reader to a String. Then closes it.
+     * 
+     * @param br
+     *            The Buffered reader.
+     * @return The String representing its contents.
+     * @throws IOException
+     */
     public static String getInputString(BufferedReader br) throws IOException{
 	StringBuilder builder=new StringBuilder();
 	String line=br.readLine();

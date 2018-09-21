@@ -30,6 +30,12 @@ import es.upv.sabien.triplerest.api.TripleREST;
 import es.upv.sabien.triplerest.api.TripleRESTException;
 import es.upv.sabien.triplerest.api.Utils;
 
+/**
+ * Implementation of Triple REST API using RDF4J Java APIs.
+ * 
+ * @author alfiva
+ *
+ */
 public class RDF4JTripleRESTImpl implements TripleREST {
 
     Repository myRepository;
@@ -53,6 +59,9 @@ public class RDF4JTripleRESTImpl implements TripleREST {
 	}
     }
     
+    /**
+     * Closes the connection to the underlying RDF4J repository.
+     */
     public void close(){
 	try {
 	    con.close();
@@ -161,6 +170,17 @@ public class RDF4JTripleRESTImpl implements TripleREST {
 	return true;
     }
 
+    /**
+     * Parses a serialized representation of a Literal in Turtle, in the format
+     * "value"^^{@literal<}namespace#type{@literal>}
+     * 
+     * @param serial
+     *            The serialization of the literal
+     * @return The Literal value
+     * @throws TripleRESTException
+     *             If the serialization does not follow the right format, or
+     *             some other issue happened during creation.
+     */
     private Literal processLiteral(String serial) throws TripleRESTException {
 	Literal obj;
 	try {

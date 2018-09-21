@@ -28,8 +28,7 @@ import es.upv.sabien.triplerest.api.AbstractSPARQLTripleREST;
 import es.upv.sabien.triplerest.api.TripleRESTException;
 
 /**
- * Common root for CHE-based and MW-based implementations of the Triple-based
- * REST interface.
+ * Implementation of Triple REST API using universAAL CHe SPARQL interface.
  * 
  * @author alfiva
  *

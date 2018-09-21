@@ -89,6 +89,18 @@ public class Utils {
 	return result;
     }
 
+    /**
+     * Given a Turtle-serialized representation of a resource, it finds out the
+     * URI of that resource. This is a convenience method. Implementations of
+     * Triple REST should implement their own method of finding the root IRI.
+     * This one assumes the first IRI in the triples section of the
+     * serialization is the one of the resource being described, but this does
+     * not have to be true in all cases.
+     * 
+     * @param input
+     *            The serialized resource
+     * @return The IRI of the that resource
+     */
     public static String getRootIRI(String input) {
 	String[] prefixes_triples=splitPrefixes(input);
 	String iri = prefixes_triples[1].trim();

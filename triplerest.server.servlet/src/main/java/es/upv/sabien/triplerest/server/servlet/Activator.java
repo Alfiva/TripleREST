@@ -18,6 +18,12 @@ import org.osgi.service.http.NamespaceException;
 
 import es.upv.sabien.triplerest.api.TripleREST;
 
+/**
+ * Activator that starts the servlet using OSGi http services.
+ * 
+ * @author alfiva
+ *
+ */
 public class Activator implements BundleActivator {
     private static final String URL = "/store";
     public static BundleContext osgiContext = null;
