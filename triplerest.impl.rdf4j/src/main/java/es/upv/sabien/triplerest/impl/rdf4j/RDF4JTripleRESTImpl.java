@@ -23,7 +23,7 @@ import org.eclipse.rdf4j.repository.RepositoryException;
 import org.eclipse.rdf4j.repository.sail.SailRepository;
 import org.eclipse.rdf4j.rio.RDFFormat;
 import org.eclipse.rdf4j.rio.Rio;
-import org.eclipse.rdf4j.sail.inferencer.fc.ForwardChainingRDFSInferencer;
+import org.eclipse.rdf4j.sail.inferencer.fc.SchemaCachingRDFSInferencer;
 import org.eclipse.rdf4j.sail.nativerdf.NativeStore;
 
 import es.upv.sabien.triplerest.api.TripleREST;
@@ -50,9 +50,9 @@ public class RDF4JTripleRESTImpl implements TripleREST {
 	String indexes = "spoc,posc,cosp";
 	try {
 	    myRepository = new SailRepository(
-		    new ForwardChainingRDFSInferencer(
+		    new SchemaCachingRDFSInferencer(
 			    new NativeStore(dataDir, indexes)));
-	    myRepository.initialize();
+	    myRepository.init();
 	    con = myRepository.getConnection();
 	} catch (Exception e) {
 	    e.printStackTrace();
