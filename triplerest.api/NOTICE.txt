@@ -1,0 +1,21 @@
+TripleREST API
+
+Copyright 2018 ITACA-SABIEN, http://www.tsb.upv.es
+Instituto Tecnologico de Aplicaciones de Comunicacion
+Avanzadas - Grupo Tecnologias para la Salud y el
+Bienestar (SABIEN)
+
+I. Included Software
+
+This does not include any software developed by 3rd parties
+
+
+II. Used Software
+
+This does not use any software developed by 3rd parties
+
+
+III. License Summary
+- Apache License 2.0
+
+See included file LICENSE.txt
