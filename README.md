@@ -1,20 +1,20 @@
 # TripleREST
 TripleREST is a triple-based RESTful interface for Linked Data (think RDF). TripleREST consists on representing the triples that describe a resource in RDF as the path of a URL, with the RDF terms of subject, predicate and object as segments of the path, and manipulating these in a RESTful manner. Let’s assume `http://example.org` hosts an implementation of TripleREST backed with an RDF model or store, and that SUB, PRE and OBJ are the subject, predicate and object, respectively, of an RDF triple. Then for example:
 
-| Met  | URL                        | Body         | Result  | 
+|      | URL                        | Body         | Result  | 
 | ---- | ---------------------------| ------------ | ------  |
 | GET  | `http://example.org/SUB`     |              | Returns a description of the SUB resource |
 | GET  | `http://example.org/*/*/OBJ` |              | Returns all triples with OBJ as an object |
 | POST | `http://example.org/SUB/PRE` | OBJ triples  | Adds OBJ resource as the object in the SUB-PRE-OBJ triple |
 
-Of course, the URIs of SUB, OBJ and PRE can't be written as-is in a URL. Characters can be escaped, or the prefixes can be extracted. For instance:
+The URIs of SUB, OBJ and PRE can't be written as-is in a URL. Characters can be escaped, or the prefixes can be extracted. For instance:
 
 ```
 http://example.org/pref:subject?pref=http://mynamespace.org/
 
 http://example.org/*/*/pref:object?pref=http://mynamespace.org/
 
-http://example.org/pref:subject/other:predicate?pref=http://mynamespace.org/&other=http://othernamespace.org/
+http://example.org/pre1:subject/pre2:predicate?pre1=http://mynamespace1.org/&pre2=http://mynamespace2.org/
 ```
 
 You can find the full definition of the TripleREST API in the Wiki, along with more examples and useful equivalences to SPARQL.
