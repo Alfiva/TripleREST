@@ -1,5 +1,5 @@
 /*
-	Copyright 2018 ITACA-SABIEN, http://www.tsb.upv.es
+	Copyright 2018 ITACA-SABIEN, http://www.sabien.upv.es
 	Instituto Tecnologico de Aplicaciones de Comunicacion
 	Avanzadas - Grupo Tecnologias para la Salud y el
 	Bienestar (SABIEN)
