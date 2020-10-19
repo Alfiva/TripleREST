@@ -37,7 +37,7 @@ To run them, first choose only one option at each level (servlet or Spark for se
 * **triplerest.server.servlet**: [Javax Servlet](https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api).
 * **triplerest.server.spark**: [Spark core](https://mvnrepository.com/artifact/org.apache.spark/spark-core).
 * **triplerest.impl.rdf4j**: [RDF4J libraries](https://mvnrepository.com/artifact/org.eclipse.rdf4j).
-* **triplerest.impl.uaal**: [unviersAAL platform](https://github.com/universAAL/distro.karaf) with [CHe](https://github.com/universAAL/context/wiki/Context-History-Entrepot) and [utilites API](https://github.com/universAAL/utilities/wiki/Utility-API).
+* **triplerest.impl.uaal**: [universAAL platform](https://github.com/universAAL/distro.karaf) with [CHe](https://github.com/universAAL/context/wiki/Context-History-Entrepot) and [utilites API](https://github.com/universAAL/utilities/wiki/Utility-API).
 
 ...And of course the **triplerest.api** itself. Since it is not an OSGi bundle but a simple .jar library, you will need the `wrap:` command when installing in OSGi.
 
